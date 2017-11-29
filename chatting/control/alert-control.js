@@ -11,7 +11,7 @@ alertService.setAlertDao(alertDao)
 const router = express.Router()
 
 router.post('/get.json', (request, response) => {
-  response.setHeader("Access-Control-Allow-Methods", "*")
+  response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE")
   //- POST, GET, OPTIONS, DELETE 요청에 대해 허용하겠다는 의미입니다.
 
   response.setHeader("Access-Control-Max-Age", "3600")
@@ -55,8 +55,11 @@ router.post('/get.json', (request, response) => {
 })
 
 router.post('/add.json', (request, response) => {
-  // response.setHeader("Access-Control-Allow-Origin", "https://www.bombees.com")
+  response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE")
+  response.setHeader("Access-Control-Max-Age", "3600")
+  response.setHeader("Access-Control-Allow-Headers", "x-requested-with")
   response.setHeader("Access-Control-Allow-Methods", "https://www.bombee.be")
+  // response.setHeader("Access-Control-Allow-Origin", "https://www.bombees.com")
   console.log('애드들어옴')
   var type = request.body.type
   var othermno = request.body.othermno
@@ -75,8 +78,11 @@ router.post('/add.json', (request, response) => {
 })
 
 router.post('/delete.json', (request, response) => {
-  // response.setHeader("Access-Control-Allow-Origin", "https://www.bombees.com")
+  response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE")
+  response.setHeader("Access-Control-Max-Age", "3600")
+  response.setHeader("Access-Control-Allow-Headers", "x-requested-with")
   response.setHeader("Access-Control-Allow-Methods", "https://www.bombee.be")
+  // response.setHeader("Access-Control-Allow-Origin", "https://www.bombees.com")
   console.log('삭제 들어옴')
   var no = request.body.no
 
