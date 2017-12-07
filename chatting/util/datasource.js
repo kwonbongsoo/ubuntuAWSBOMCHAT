@@ -3,9 +3,10 @@
 
 const mysql = require('mysql')
 const connection = mysql.createConnection({
+  host:'bombee.cmtyfajod2ua.ap-northeast-2.rds.amazonaws.com',
   database: 'bombeedb',
   user: 'bombee',
-  password: '1111'
+  password: '11111111'
 })
 connection.connect()
 
